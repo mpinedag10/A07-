@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/Esfuerzo.css">
+        <title>Esfuerzo</title>
+    </head>
+<body>
+    <div class="principal">
+        <header>
+            <h2>Esfuerzo de Halstead</h2>
+        </header>
+        <h3>Ingrese los valores requeridos </h3>
+        <input class="valores" type="text" id="n1" placeholder="n1">
+        <input class="valores" type="text" id="N1" placeholder="N1">
+        <input class="valores" type="text" id="n2" placeholder="n2">
+        <input class="valores" type="text" id="N2" placeholder="N2">
+        <br>
+        <br><button type="submit" onclick="esfuerzo()">Obtener Esfuerzo</button>
+        <input type="button" value = Regresar onclick="history.go(-1)">
+</body>    
+</html>
+
+<script>
+    let esfuerzo = () => {
+        var n1, N1, n2, N2, n, N, Nlog, V, D, E; 
+        n1 = document.getElementById("n1").value;
+        N1 = document.getElementById("N1").value;
+        n2 = document.getElementById("n2").value;
+        N2 = document.getElementById("N2").value;
+        n= parseInt(n1) + parseInt(n2)
+        N= parseInt(N1) + parseInt(N2)
+        Nlog = (n1* Math.log2(n1))+(n2* Math.log2(n2));
+        V = N* Math.log2(n);
+        D = (n1/2)*(N2/n2);
+        E = D*V;
+        alert("El Esfuerzo es: "+E);
+    };
+</script>
