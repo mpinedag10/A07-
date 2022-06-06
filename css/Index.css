@@ -1,0 +1,20 @@
+.principal{
+    text-align: center;
+    width: 340px;
+    height: 340px;
+    background: cornflowerblue;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 7px 13px 37px #000;
+    padding: 20px 30px;
+    border-top: 4px solid lime;
+   color: white;
+ }
+ #titulo{
+     margin: 0;
+     text-align: center;
+     height: 50px;
+     margin-bottom: 30px;
+     border-bottom: 1px solid;
+ }
+
