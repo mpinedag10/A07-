@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/MCM.css">
+        <title>MCM</title>
+    </head>
+<body>
+    <div class="principal">
+        <header>
+            <h2>Minimo Comun Multiplo</h2>
+        </header>
+        <h3>Ingrese los valores requeridos </h3>
+        <input class="valores" type="text" id="n1" placeholder="n1">
+        <input class="valores" type="text" id="n2" placeholder="n2">
+        <br>
+        <br><button type="submit" onclick="MCM()">Obtener MCM</button>
+        <input type="button" value = Regresar onclick="history.go(-1)">
+</body>    
+</html>
+
+<script>
+    let MCM= () => {
+    var n1,n2, r1,r2, mcm;
+    let aux;
+
+    n1 = document.getElementById("n1").value;
+    n2 = document.getElementById("n2").value;
+    r1 = n1;
+    r2 = n2;
+
+    while (r2 !==0){
+        aux = r2;
+        r2 = r1 % r2;
+        r1 = aux;
+    }
+    mcm = (n1 * n2) / r1;
+    alert("El minimo comun multiplo es: "+mcm);
+    }
+    
+
+</script>
