@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/Conversion.css">
+        <title>Conversion</title>
+    </head>
+<body>
+    <div class="principal">
+        <header>
+            <h2>Conversión HTML</h2>
+        </header>
+        <h3>Ingrese una cadena</h3>
+        <input class="valores" type="text" id="cd" placeholder="Texto">
+        <br>
+        <br>
+        <br><button type="submit" onclick="replac()">Obtener Cadena</button>
+</body>    
+</html>
+
+<script>
+    //function to ignore OR escape HTML chars
+const escapeHtmlChars = (unsafe) => {
+    return unsafe.replaceAll(/&/g, '&amp;').replacereplaceAll(/</g, '&lt;').replacereplaceAll(/>/g, '&gt;').replacereplaceAll(/"/g, '&quot;').replacereplaceAll(/á/g, '&#225;').replacereplaceAll(/é/g, '&#233;').replacereplaceAll(/í/g, '&#237;').replacereplaceAll(/ó/g, '&#243;').replacereplaceAll(/ú/g, '&#250;').replacereplaceAll(/“/g,'&quot;');
+}
+// Escape while typing & print result in console
+document.querySelector('input').addEventListener('input', e => {
+  console.clear();
+  console.log( escapeHtmlChars(e.target.value));
+});
+</script>
+ 
+</body>
+<html>
