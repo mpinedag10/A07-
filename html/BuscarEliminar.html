@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/BuscarEliminar.css">
+        <title>BuscarEliminar</title>
+    </head>
+<body>
+    <div class="principal">
+        <header>
+            <h2>Buscar y Eliminar</h2>
+        </header>
+        <h3>Ingrese los valores requeridos </h3>
+        <input class="valores" type="text" id="nombre" placeholder="Ingrese nombre">
+        <input class="valores" type="text" id="edad" placeholder="Ingrese edad">
+        <br>
+        <br><button type="submit" onclick="capturar()">Agregar</button>
+        <br><button type="submit" onclick="MostrarM()">Mostrar Nombres Multiples de 7</button>
+        <br><input type="button" value = Regresar onclick="history.go(-1)">
+        <div class="container">
+            <table class="table" id="tabla">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+            </table>
+        
+        </div>
+    </body>    
+</html>
+
+<script>
+    function capturar(){
+        function Persona(nombre,edad){
+            this.nombre=nombre;
+            this.edad=edad;
+        }
+        cnombre = document.getElementById("nombre").value;
+        console.log(cnombre);
+        cedad = document.getElementById("edad").value;
+        console.log(cedad);
+
+        nuevoS = new Persona(cnombre, cedad);
+        console.log(nuevoS);
+        agregar();
+       
+    }
+    var baseD = [];
+    function agregar(){
+      baseD.push(nuevoS);
+      console.log(baseD);
+      document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoS.nombre+'</td><td>'+nuevoS.edad+'</td></tbody>';
+    };
+
+  function MostrarM()
+        {  
+        for (x=0; x<baseD.length;x++){
+            if((x % 7)==0){
+               alert("Lista: "+ nuevoS.nombre);
+                  }else {
+                    console.log("No es multiplo de 7");
+                    
+                }
+            }
+        } 
+</script>
